@@ -15,9 +15,7 @@ jobs:
           echo '${{ secrets.SUBMODULE_REPO_DEPLOY_KEY }}' > $HOME/.ssh/ssh.key
           chmod 600 $HOME/.ssh/ssh.key
           export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/ssh.key"
-          git submodule set-url <path-to-submodule> git@github.com:<organization/submodule>.git
           git submodule update --init --recursive
-          git submodule set-url <path-to-submodule> https://github.com/<organization/submodule>.git
           unset GIT_SSH_COMMAND
         
     # Use GitHub Actions' cache to shorten build times and decrease load on servers
