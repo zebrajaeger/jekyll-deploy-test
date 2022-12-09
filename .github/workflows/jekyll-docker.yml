@@ -3,6 +3,7 @@ name: Testing the GitHub Pages publication
 on:
   push
 
+
 jobs:
   jekyll:
     runs-on: ubuntu-latest
